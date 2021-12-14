@@ -4,4 +4,10 @@
       padding: 0;
     }
   }
+
+  .fullscreen-snackbar {
+    .mat-button-wrapper {
+      @apply text-orange;
+    }
+  }
 }

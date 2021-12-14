@@ -7,16 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
-import { MatDialogModule } from '@angular/material/dialog';
 import {
   FullscreenOverlayContainer,
   OverlayContainer,
   OverlayModule,
 } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import { IconsService } from './core/services/icons.service';
+
 import { SplashScreenComponent } from './core/components/splash-screen/splash-screen.component';
 
 @NgModule({
@@ -27,9 +28,9 @@ import { SplashScreenComponent } from './core/components/splash-screen/splash-sc
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatDialogModule,
     OverlayModule,
     PortalModule,
+    MatSnackBarModule
   ],
   providers: [
     IconsService,
