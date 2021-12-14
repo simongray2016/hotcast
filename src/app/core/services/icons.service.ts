@@ -7,7 +7,7 @@ export class IconsService {
   readonly icons: Array<{ name: string; url: string }> = [
     {
       name: 'home',
-      url: 'assets/logo.svg',
+      url: 'assets/icons/home.svg',
     },
   ];
 
