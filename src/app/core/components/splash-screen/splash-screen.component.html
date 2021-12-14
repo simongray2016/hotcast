@@ -1,0 +1,19 @@
+<div
+  class="
+    w-screen
+    h-screen
+    bg-main-blue
+    flex flex-col
+    justify-center
+    items-center
+  "
+>
+  <img class="w-7/12 animate-fade-in" src="assets/logo3.svg" alt="Logo" />
+  <div
+    class="w-7/12 text-center text-white text-xl"
+    [class.animate-fade-up]="fadeUp"
+    [ngClass]="{ 'opacity-100': fadeUp, 'opacity-0': !fadeUp }"
+  >
+    immerse in podcast
+  </div>
+</div>
