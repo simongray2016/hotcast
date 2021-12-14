@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { IconsService } from './core/services/icons.service';
 import { SplashScreenComponent } from './core/components/splash-screen/splash-screen.component';
-import { firstValueFrom, tap, timer } from 'rxjs';
+import {
+  catchError,
+  firstValueFrom,
+  lastValueFrom,
+  of,
+  tap,
+  timer,
+} from 'rxjs';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { MediaService } from './core/services/media.service';
@@ -21,7 +28,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     await this.showSplashScreen();
-    await this.openSnackBarRequestFullScreen();
+    this.openSnackBarRequestFullScreen();
   }
 
   showSplashScreen(): Promise<any> {
@@ -32,7 +39,7 @@ export class AppComponent implements OnInit {
     return firstValueFrom(onClose);
   }
 
-  openSnackBarRequestFullScreen(): Promise<any> {
+  openSnackBarRequestFullScreen() {
     const snackbarRef = this._snackbar.open(
       'Open full screen to the good experience',
       'Open',
@@ -42,9 +49,9 @@ export class AppComponent implements OnInit {
       }
     );
 
-    const onAction = snackbarRef
+    snackbarRef
       .onAction()
-      .pipe(tap(() => this._mediaService.requestFullScreen()));
-    return firstValueFrom(onAction);
+      .pipe(tap(() => this._mediaService.requestFullScreen()))
+      .subscribe();
   }
 }
