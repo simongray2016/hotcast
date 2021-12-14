@@ -1,0 +1,33 @@
+<div class="w-screen h-screen bg-lighter-orange flex flex-col items-stretch">
+  <div class="flex justify-end my-5 px-5 w-full">
+    <a routerLink="/home">Skip</a>
+  </div>
+  <owl-carousel-o class="flex-1" [options]="customOptions">
+    <!-- slide 1 -->
+    <ng-template carouselSlide>
+      <div class="w-full flex flex-col items-center">
+        <img
+          style="width: auto; height: 50vh"
+          src="assets/images/intro.png"
+          alt=""
+        />
+        <div class="w-6/12 text-3xl text-center font-bold my-5">
+          Enjoy podcast playlist made just for you
+        </div>
+      </div>
+    </ng-template>
+
+    <!-- slide 2 -->
+    <ng-template carouselSlide>
+      <div class="w-full flex flex-col items-center">
+        <img style="max-height: 50vh" src="assets/images/intro2.png" alt="" />
+        <div class="w-6/12 text-3xl text-center font-bold my-5">
+          Enjoy podcast playlist made just for you
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+  <div class="px-5 mb-10">
+    <button class="w-full black-btn">Next</button>
+  </div>
+</div>

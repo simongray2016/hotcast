@@ -3,6 +3,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import './app/core/styles/index.scss';
 
 @include mat.core();
 
@@ -26,4 +27,8 @@ body {
   color: #283244 !important;
   line-height: 1.6 !important;
   font-size: 15px !important;
+}
+
+* {
+  box-sizing: border-box;
 }

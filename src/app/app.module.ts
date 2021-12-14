@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 import { MatDialogModule } from '@angular/material/dialog';
 import {
   FullscreenOverlayContainer,
@@ -13,9 +15,9 @@ import {
 } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 
+
 import { IconsService } from './core/services/icons.service';
 import { SplashScreenComponent } from './core/components/splash-screen/splash-screen.component';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, SplashScreenComponent],

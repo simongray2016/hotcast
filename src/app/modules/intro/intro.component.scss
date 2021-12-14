@@ -1,0 +1,9 @@
+::ng-deep {
+  .owl-theme .owl-dots .owl-dot span {
+    @apply transition-all
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span {
+    @apply bg-orange w-6
+  }
+}
