@@ -44,6 +44,6 @@ export class IntroComponent implements OnInit {
   }
 
   goToApp() {
-    this._router.navigate(['sign-in']);
+    this._router.navigate(['sign-in'], { replaceUrl: true });
   }
 }

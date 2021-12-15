@@ -1,6 +1,6 @@
 <div class="w-screen h-screen bg-lighter-orange flex flex-col items-stretch">
   <div class="flex justify-end my-5 px-5 w-full">
-    <a routerLink="/home">Skip</a>
+    <a (click)="goToApp()">Skip</a>
   </div>
   <owl-carousel-o
     class="flex-1"
@@ -49,7 +49,10 @@
     </ng-template>
   </owl-carousel-o>
   <div class="px-5 mb-10">
-    <button (click)="lastSlide ? goToApp() : slides.next()" class="w-full black-btn relative h-12">
+    <button
+      (click)="lastSlide ? goToApp() : slides.next()"
+      class="w-full black-btn relative h-12"
+    >
       <div
         class="
           absolute
