@@ -1,7 +1,6 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  important: true,
   prefix: "",
   purge: {
     enabled: true,
@@ -14,12 +13,14 @@ module.exports = {
       current: "currentColor",
       "main-blue": "#575FCC",
       "light-blue": "#739EF1",
-      "orange": "#FF6D3B",
+      orange: "#FF6D3B",
       "lighter-orange": "#FFF8F3",
       "main-black": "#283244",
       green: "#8FD8B5",
       yellow: "#FABF48",
       white: colors.white,
+      black: colors.black,
+      gray: colors.gray,
     },
     extend: {
       keyframes: {

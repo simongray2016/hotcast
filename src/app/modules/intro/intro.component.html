@@ -2,7 +2,12 @@
   <div class="flex justify-end my-5 px-5 w-full">
     <a routerLink="/home">Skip</a>
   </div>
-  <owl-carousel-o class="flex-1" [options]="customOptions">
+  <owl-carousel-o
+    class="flex-1"
+    [options]="customOptions"
+    (change)="onChangeSlides($event)"
+    #slides
+  >
     <!-- slide 1 -->
     <ng-template carouselSlide>
       <div class="w-full flex flex-col items-center">
@@ -32,7 +37,11 @@
     <!-- slide 3 -->
     <ng-template carouselSlide>
       <div class="w-full flex flex-col items-center">
-        <img style="width: auto; max-height: 50vh" src="assets/images/intro3.png" alt="" />
+        <img
+          style="width: auto; max-height: 50vh"
+          src="assets/images/intro3.png"
+          alt=""
+        />
         <div class="w-9/12 text-3xl text-center font-bold my-5">
           Immerse yourself in a wide range of trending topics
         </div>
@@ -40,6 +49,40 @@
     </ng-template>
   </owl-carousel-o>
   <div class="px-5 mb-10">
-    <button class="w-full black-btn">Next</button>
+    <button (click)="lastSlide ? goToApp() : slides.next()" class="w-full black-btn relative h-12">
+      <div
+        class="
+          absolute
+          top-0
+          bottom-0
+          left-0
+          right-0
+          flex
+          items-center
+          justify-center
+        "
+        *ngIf="lastSlide; else next"
+        @FadeInRightOnEnter
+      >
+        Get started
+      </div>
+      <ng-template #next>
+        <div
+          class="
+            absolute
+            top-0
+            bottom-0
+            left-0
+            right-0
+            flex
+            items-center
+            justify-center
+          "
+          @FadeOutLeftOnLeave
+        >
+          Next
+        </div>
+      </ng-template>
+    </button>
   </div>
 </div>
