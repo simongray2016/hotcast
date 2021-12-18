@@ -23,6 +23,13 @@ const routes: Routes = [
     data: { animation: 'SignInPage' },
   },
   {
+    path: 'onboarding',
+    loadChildren: () =>
+      import('src/app/modules/onboarding/onboarding.module').then(
+        (m) => m.OnboardingModule
+      ),
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('src/app/modules/home/home.module').then((m) => m.HomeModule),

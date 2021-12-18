@@ -6,15 +6,20 @@ import { LocalStorageService } from './local-storage.service';
   providedIn: 'root',
 })
 export class AuthService {
-  private _userSignIn: any;
-
   get user() {
-    return this._userSignIn;
+    return this._localStorageService.getValue<any>(LOCAL_STORAGE_KEY.user);
   }
 
-  constructor(private _localStorageService: LocalStorageService) {
-    this._userSignIn = this._localStorageService.getValue(
-      LOCAL_STORAGE_KEY.user
+  constructor(private _localStorageService: LocalStorageService) {}
+
+  login() {
+    this._localStorageService.setValue(
+      LOCAL_STORAGE_KEY.user,
+      JSON.stringify({ username: 'Daniel', avatar: '', newUser: true })
     );
+  }
+
+  isNewUser(): boolean {
+    return this.user.newUser ?? false;
   }
 }

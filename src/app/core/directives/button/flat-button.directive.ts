@@ -20,7 +20,7 @@ export class FlatButtonDirective {
   constructor(private _matRipple: MatRipple) {}
 
   getButtonClasses(): string {
-    let classes = `relative overflow-hidden rounded-lg p-3 text-white font-bold bg-${this.color}`;
+    let classes = `relative overflow-hidden select-none rounded-lg p-3 text-white font-bold bg-${this.color}`;
 
     return classes;
   }
